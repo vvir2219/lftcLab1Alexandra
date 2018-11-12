@@ -1,0 +1,15 @@
+deci, am un string, o sa-mi trebuiasca un iterator pe acest string(un iterator
+copiabil) cu care sa fac match-uri
+deci, am o chestie numita CodeTable care contine cuvintele rezervate si token-ul
+fiecaruia, cand fac un match pe asa ceva, daca ii valid trebuie sa imi returneze
+in principiu token-ul si sa imi plimbe iteratorul
+apoi am match pe constante(sa luam pt inceput doar numere intregi)
+cand fac match pe asa ceva, nu am nevoie de token, am nevoie doar de string-ul
+din care ii compus numaru' si iar sa imi plimbe iteratorul
+la fel si pe numere reale si la fel si pe identificatori
+
+apoi, caz 1 cu cuvinte rezervate, bag in fip token-ul
+restu, bag in fip token(0/1) si in symboltable bag string-u la un id unic
+cam atata
+
+as putea generaliza ca match sa aiba string si token, ceaaaas

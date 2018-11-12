@@ -3,6 +3,7 @@ package tables;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.function.Predicate;
 
 public class CodeTable {
 
@@ -80,4 +81,11 @@ public class CodeTable {
         return matchesFound;
     }
 
+    public boolean any(Predicate<String> predicate) {
+        for(Map.Entry<String, Integer> entry : ct.entrySet()){
+            if(predicate.test(entry.getKey()))
+                return true;
+        }
+        return false;
+    }
 }

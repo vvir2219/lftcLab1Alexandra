@@ -17,6 +17,7 @@ public class Analizator {
     private IPFTable ipfTable;
     private List<CodeError> codeErrors;
     private TokenMatcher codeTableMatcher;
+    private TokenMatcher integerMatcher;
 
     public Analizator(String filename) {
         this.filename = filename;
@@ -24,6 +25,7 @@ public class Analizator {
         symbolTable = new SymbolTable();
         ipfTable = new IPFTable();
         codeTableMatcher = new CodeTableMatcher(codeTable);
+        integerMatcher = new IntegerMatcher();
     }
 
     public void analize() throws IOException {
@@ -40,8 +42,13 @@ public class Analizator {
                     if (match.isValid())
                         System.out.println(match.getValue() + " = " + match.getToken().get());
                     else {
-                        System.out.println("Nu match code table, nu bun");
-                        break;
+                        match = integerMatcher.match(iterator);
+                        if (match.isValid())
+                            System.out.println(match.getValue() + " = " + match.getToken().get());
+                        else {
+                            System.out.println("ana are mere");
+                            break;
+                        }
                     }
                 }
             }

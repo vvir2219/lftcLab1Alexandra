@@ -1,0 +1,14 @@
+int n;
+double sum = 0;
+double value;
+int counter;
+
+while(counter < n)
+{
+	read_STDIN value;
+	sum = sum + value;
+	counter = counter + 1;
+}
+
+write_STDOUT sum;
+

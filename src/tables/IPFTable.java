@@ -1,10 +1,11 @@
 package tables;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class IPFTable {
 
-    private List<ElementIPF> elementsIPF;
+    private ArrayList<ElementIPF> elementsIPF = new ArrayList<>();
 
     public void addElementIPF(ElementIPF elementIPF)
     {

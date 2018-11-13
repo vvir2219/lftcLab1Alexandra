@@ -1,0 +1,9 @@
+int radius;
+read_STDIN radius;
+const double pi = 3.14;
+
+double perimeter = 2 * pi * radius;
+double area = pi * radius * radius;
+
+write_STDOUT perimeter;
+write_STDOUT area;
